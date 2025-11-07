@@ -1,6 +1,10 @@
 package com.fullstack.libreria.repository;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
 import com.fullstack.libreria.model.Libro;
 
 /**
@@ -21,4 +25,7 @@ import com.fullstack.libreria.model.Libro;
 public interface LibroRepository extends JpaRepository<Libro, Long> {
     // Si en el futuro queremos buscar por "autor", por ejemplo:
     // List<Libro> findByAutor(String autor);
+        // Ordenar por ID ascendente
+    @Query("SELECT l FROM Libro l ORDER BY l.id ASC")
+    List<Libro> findAllOrderById();
 }

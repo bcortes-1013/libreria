@@ -1,6 +1,7 @@
 package com.fullstack.libreria.controller;
 
 import com.fullstack.libreria.model.Libro;
+import com.fullstack.libreria.repository.LibroRepository;
 import com.fullstack.libreria.service.LibroService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,13 +20,16 @@ import java.util.List;
  */
 @RestController // Indica que esta clase responderá solicitudes REST (formato JSON)
 @RequestMapping("/api/libros") // Prefijo común para todas las rutas de este controlador
+@CrossOrigin(origins = "*")
 public class LibroController {
 
     private final LibroService service;
+    private final LibroRepository repository;
 
     // Inyección de dependencias: el controlador recibe el servicio listo para usar
-    public LibroController(LibroService service) {
+    public LibroController(LibroService service, LibroRepository repository) {
         this.service = service;
+        this.repository = repository;
     }
 
     /**
@@ -35,7 +39,8 @@ public class LibroController {
      */
     @GetMapping
     public List<Libro> listar() {
-        return service.findAll();
+        // return service.findAll();
+        return repository.findAllOrderById();
     }
 
     /**
