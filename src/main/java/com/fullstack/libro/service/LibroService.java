@@ -1,8 +1,9 @@
-package com.fullstack.libreria.service;
+package com.fullstack.libro.service;
 
-import com.fullstack.libreria.model.Libro;
-import com.fullstack.libreria.repository.LibroRepository;
 import org.springframework.stereotype.Service;
+
+import com.fullstack.libro.model.Libro;
+import com.fullstack.libro.repository.LibroRepository;
 
 import java.util.List;
 import java.util.Optional;

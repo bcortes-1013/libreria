@@ -1,4 +1,4 @@
-package com.fullstack.libreria.model;
+package com.fullstack.libro.model;
 
 import jakarta.persistence.*; // Librería JPA (maneja las entidades y mapeo a tablas)
 import lombok.Data; // Anotación de Lombok: genera getters, setters, toString, etc.

@@ -1,4 +1,4 @@
-package com.fullstack.libreria;
+package com.fullstack.libro;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

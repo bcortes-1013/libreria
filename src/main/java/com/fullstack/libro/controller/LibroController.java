@@ -1,10 +1,11 @@
-package com.fullstack.libreria.controller;
+package com.fullstack.libro.controller;
 
-import com.fullstack.libreria.model.Libro;
-import com.fullstack.libreria.repository.LibroRepository;
-import com.fullstack.libreria.service.LibroService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import com.fullstack.libro.model.Libro;
+import com.fullstack.libro.repository.LibroRepository;
+import com.fullstack.libro.service.LibroService;
 
 import java.util.List;
 
