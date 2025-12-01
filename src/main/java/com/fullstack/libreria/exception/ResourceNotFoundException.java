@@ -1,4 +1,4 @@
-package com.fullstack.exception;
+package com.fullstack.libreria.exception;
 
 /**
  * ===============================================================

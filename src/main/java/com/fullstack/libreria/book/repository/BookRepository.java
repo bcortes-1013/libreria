@@ -1,11 +1,10 @@
-package com.fullstack.libro.repository;
+package com.fullstack.libreria.book.repository;
 
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 
-import com.fullstack.libro.model.Libro;
+import com.fullstack.libreria.book.model.Book;
 
 /**
  * Interfaz LibroRepository
@@ -22,10 +21,9 @@ import com.fullstack.libro.model.Libro;
  * NO es necesario implementar nada manualmente.
  * Spring Data JPA genera todo el código internamente.
  */
-public interface LibroRepository extends JpaRepository<Libro, Long> {
+public interface BookRepository extends JpaRepository<Book, Long> {
     // Si en el futuro queremos buscar por "autor", por ejemplo:
     // List<Libro> findByAutor(String autor);
         // Ordenar por ID ascendente
-    @Query("SELECT l FROM Libro l ORDER BY l.id ASC")
-    List<Libro> findAllOrderById();
+    List<Book> findAllByOrderByIdAsc();
 }

@@ -1,9 +1,9 @@
-package com.fullstack.libro.service;
+package com.fullstack.libreria.book.service;
 
 import org.springframework.stereotype.Service;
 
-import com.fullstack.libro.model.Libro;
-import com.fullstack.libro.repository.LibroRepository;
+import com.fullstack.libreria.book.model.Book;
+import com.fullstack.libreria.book.repository.BookRepository;
 
 import java.util.List;
 import java.util.Optional;
@@ -20,21 +20,21 @@ import java.util.Optional;
  * inexistentes.
  */
 @Service // Marca esta clase como un "servicio" dentro del contexto de Spring
-public class LibroService {
+public class BookService {
 
     // Inyección automática del repositorio para acceder a la base de datos
-    private final LibroRepository repository;
+    private final BookRepository repository;
 
     // Constructor: Spring inyectará automáticamente una instancia de
     // LibroRepository
-    public LibroService(LibroRepository repository) {
+    public BookService(BookRepository repository) {
         this.repository = repository;
     }
 
     /**
      * Obtiene todos los libros de la base de datos.
      */
-    public List<Libro> findAll() {
+    public List<Book> findAll() {
         return repository.findAll();
     }
 
@@ -42,7 +42,7 @@ public class LibroService {
      * Busca un libro por su ID.
      * Retorna un Optional (puede o no existir).
      */
-    public Optional<Libro> findById(Long id) {
+    public Optional<Book> findById(Long id) {
         return repository.findById(id);
     }
 
@@ -51,7 +51,7 @@ public class LibroService {
      * Si el ID es null → crea uno nuevo.
      * Si el ID existe → actualiza.
      */
-    public Libro save(Libro libro) {
+    public Book save(Book libro) {
         return repository.save(libro);
     }
 

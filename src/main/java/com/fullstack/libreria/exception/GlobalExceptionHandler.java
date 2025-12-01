@@ -1,4 +1,4 @@
-package com.fullstack.exception;
+package com.fullstack.libreria.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
